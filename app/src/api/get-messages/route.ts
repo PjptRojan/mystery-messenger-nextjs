@@ -57,6 +57,13 @@ export async function GET(request: Request) {
                 status: 200
         })
     } catch (error) {
-        
+        console.error("An unexpected error occured", error)
+         return Response.json({
+            success: false,
+            message: "Unexpected error"
+        },
+            {
+                status: 401
+            })
     }
 }
